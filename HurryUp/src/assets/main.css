@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(../assets/img/alex-dukhanov-1l2ZSKCMDio-unsplash.jpg);
+  background-position: top center;
+  background-size: contain;
+  box-sizing: border-box;
+  font-family: "Bree Serif", serif;
+  color: white;
+  filter: grayscale(30%);
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.p-card, .p-dialog{
+  border: 1px solid #333333 !important;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 16px !important;
+  color: white !important;
+  line-height: 1.8rem;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 760px) {
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 950px){
+  h1{
+    font-size: 2.5rem;
+  }
+}
+
+/* rooms css */
+
+.addamsi,
+.smerfy,
+.jumanji,
+.zodiak,
+.joker,
+.lowcy,
+.posterunek {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  color: white !important;
+  filter: grayscale(50%);
+}
+
+.p-card {
+  width: 25rem;
+  height: 15rem;
+  margin: 1rem;
+}
+
+.p-card:hover .scale {
+  transform: scale(1.1);
+}
+
+.addamsi{
+  background-image: url(../assets/img/3RA.jpg) !important;
+}
+
+.joker{
+  background-image: url(../assets/img/ryunosuke-kikuno-cqtw4QCfbQg-unsplash.jpg) !important;
+}
+
+.posterunek{
+  background-image: url(../assets/img/ye-jinghan-T5roX1jajzU-unsplash.jpg) !important;
+}
+
+.lowcy{
+  background-image: url(../assets/img/josh-hild--0o-SwEnNt0-unsplash.jpg) !important;
+}
+
+.zodiak{
+  background-image: url(../assets//img/sander-sammy-HoOP0nxd8eg-unsplash.jpg) !important;
+}
+
+.smerfy {
+  background-image: url(../assets/img/1WS.jpg) !important;
+}
+
+.jumanji {
+  background-image: url(../assets/img/1J.jpg) !important;
+}
+
+@media screen and (max-width: 760px) {
+  #Rooms .roomsCardsContainer {
+    flex-direction: column;
+  }
+
+  #Rooms .p-card {
+    width: auto !important;
+    margin-bottom: 1rem;
+    height: 10rem;
+  }
+}
+
+.p-dialog-content,
+.p-dialog-footer {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  padding-right: 5rem !important;
+  padding-left: 5rem !important;
+}
+
+.p-dialog {
+  overflow: hidden;
+  max-height: 97vh;
+}
+
+.p-dialog .p-dialog-header {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.p-dialog-header-icon {
+  position: absolute !important;
+  right: 20px;
+  color: white !important;
+}
+
+.p-dialog-footer {
+  padding-top: 2rem !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  background-color: rgb(35, 35, 35) !important;
+}
+
+.roomDescription {
+  font-size: 1.2rem;
+}
+
+.button {
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.button:before {  
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.button:hover:before {
+  width: 100%;
+}

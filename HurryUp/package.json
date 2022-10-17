@@ -1,0 +1,25 @@
+{
+  "name": "hurryup",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "primeflex": "^3.2.1",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.17.0",
+    "sass": "^1.55.0",
+    "vue": "^3.2.37",
+    "vue-component-media-queries": "^1.0.0",
+    "vue-router": "^4.1.5",
+    "vue-screen": "^1.5.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0"
+  }
+}

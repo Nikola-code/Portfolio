@@ -1,0 +1,44 @@
+#TODO: temp build for CI config - move to proper production setup later
+version: "3.8"
+
+services:
+  api:
+    image: api:latest
+    build:
+      context: ../
+      dockerfile: devop-ci/web/Dockerfile.prod
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ../app:/app
+    ports:
+      - 8000:8000
+    env_file:
+      - ../envs/.env
+    depends_on:
+      - db
+  frontend:
+    image: frontend:latest
+    build:
+      context: ../
+      dockerfile: devop-ci/web/Dockerfile.node.prod
+    volumes:
+      - "../frontend:/app"
+      - "/app/node_modules"
+    ports:
+      - 80:8080
+    env_file:
+      - ../envs/.env
+  db:
+    image: db:latest
+    build:
+      context: ../
+      dockerfile: devop-ci/web/Dockerfile.db.prod
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=ba2022
+      - POSTGRES_PASSWORD=ba2022
+      - POSTGRES_DB=ba2022
+
+volumes:
+  postgres_data:

@@ -1,0 +1,71 @@
+image:
+  name: docker/compose:1.29.1
+  entrypoint: [""]
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+stages:
+  - build
+  - deploy
+
+docker-build:
+  stage: build
+  variables:
+    ENV: ${ENV}
+  before_script:
+    - export IMAGE=$CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME
+    - export API_IMAGE=$IMAGE/api
+    - export FRONTEND_IMAGE=$IMAGE/frontend
+    - export DB_IMAGE=$IMAGE/db
+    - echo ${CI_REGISTRY_PASSWORD} | docker login -u ${CI_REGISTRY_USER} ${CI_REGISTRY} --password-stdin
+
+  script:
+    - echo "$ENV" > ./envs/.env
+    - echo "$ENV"
+    - docker pull $IMAGE/api || true
+    - docker pull $IMAGE/frontend || true
+    - docker pull $IMAGE/db || true
+    - docker-compose -f devop-ci/docker-compose-prod.yml build --no-cache
+    - docker image tag api:latest $IMAGE/api:latest
+    - docker image tag frontend:latest $IMAGE/frontend:latest
+    - docker image tag db:latest $IMAGE/db:latest
+    - docker image push $IMAGE/api
+    - docker image push $IMAGE/frontend
+    - docker image push $IMAGE/db
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  variables:
+    ENV: ${ENV}
+    PRIVATE_KEY: ${SSH_PRIVATE_KEY}
+    HOST: ${SSH_HOST}
+  before_script:
+    - export IMAGE=$CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME
+    - export API_IMAGE=$IMAGE/api
+    - export FRONTEND_IMAGE=$IMAGE/frontend
+    - export DB_IMAGE=$IMAGE/db
+    - apk add --no-cache openssh-client bash
+    - mkdir -p ~/.ssh
+    - echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - echo "$ENV" > ./envs/.env
+    - echo "$ENV"
+    - chmod 700 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'gitlab.bonasoft.pl' >> ~/.ssh/known_hosts
+    - ssh -o StrictHostKeyChecking=no ssh://${HOST} whoami
+  script:
+    - echo "Deploy to ${HOST}"
+    - chmod +x ./devop-ci/scripts/deploy.sh
+    - scp -o StrictHostKeyChecking=no -r ./envs ./devop-ci ./app ./frontend ${HOST}:~/ba
+    - bash ./devop-ci/scripts/deploy.sh
+  only:
+    - main

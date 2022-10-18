@@ -1,6 +1,8 @@
 <template>
   <MenuBar />
-  <header class="text-300 text-center h-15rem mx-auto mt-8 mb-5 align-items-center">
+  <header
+    class="text-300 text-center h-15rem mx-auto mt-8 mb-5 align-items-center"
+  >
     <h1>Przeżyj niesamowitą przygodę!</h1>
     <p class="mt-4">
       Live escape room to gra, dzięki której przeniesiesz się do innej
@@ -30,15 +32,20 @@
       <p class="paragraph">Zapoznaj się z <a href="#">Regulaminem</a>.</p>
     </div>
   </div>
-  <div class="flex flex-column justify-content-around align-items-center h-30rem py-8">
+  <div
+    class="flex flex-column justify-content-around align-items-center h-30rem py-8"
+  >
     <div>
       <h2 class="mb-4 text-center">Niezapomniana przygoda czeka!</h2>
       <h2 class="text-center">Podejmiesz wyzwanie?</h2>
     </div>
-    <Button label="REZERWACJA" class="p-button-rounded text-xl border-900 w-15rem infoRezerwation" />
+    <Button
+      label="REZERWACJA"
+      class="p-button-rounded text-black-alpha-70 bg-white text-xl border-900 infoRezerwation"
+    />
   </div>
   <div id="vouchery">
-    <section class="w-8 mx-auto flex flex-column align-items-center">
+    <section class="mx-auto flex flex-column align-items-center">
       <h2 class="my-8 text-center">Szukasz nietypowego prezentu?</h2>
       <div class="h-10rem flex flex-column align-items-center">
         <p>Podaruj bliskim voucher do Hurry Up!</p>
@@ -48,35 +55,24 @@
         </p>
       </div>
       <div class="flex justify-content-center infoVouchersContainer">
-        <Card style="
-            width: 20rem;,
-            margin-bottom: 2em;
-            height: 17rem;
-            margin-right: 2vw;
-            background-color: rgba(26, 26, 26, 0.64);
-            text-align: center;
-          ">
+        <Card>
           <template #title>
-            <i class="pi pi-shopping-bag mt-4" style="font-size: 2.5rem"></i>
+            <i class="pi pi-shopping-bag mt-3 text-white text-5xl"></i>
           </template>
           <template #content>
-            <p class="mx-auto w-10 text-sm">
-              Zakupu można dokonać w siedzibie naszej firmy {{citys[$route.params.prop].adress}}, po wcześniejszym umówieniu się telefonicznie...
+            <p class="mx-auto w-10">
+              Zakupu można dokonać w siedzibie naszej firmy
+              {{ citys[$route.params.prop].adress }}, po wcześniejszym umówieniu
+              się telefonicznie...
             </p>
           </template>
         </Card>
-        <Card style="
-            width: 20rem;
-            margin-bottom: 2em;
-            height: 17rem;
-            background-color: rgba(26, 26, 26, 0.64);
-            text-align: center;
-          ">
+        <Card>
           <template #title>
-            <i class="pi pi-send mt-4" style="font-size: 2.5rem"></i>
+            <i class="pi pi-send mt-3 text-white text-5xl"></i>
           </template>
           <template #content>
-            <p class="mx-auto w-10 text-sm">
+            <p class="mx-auto w-10">
               ...bądź z możliwością przesyłki kurierskiej pod wskazany adres.
             </p>
           </template>
@@ -87,15 +83,15 @@
           W celu zamówienia vouchera prosimy o kontakt telefoniczny
         </p>
         <p class="m-4">
-          <i class="pi pi-phone" style="font-size: 1rem"></i>
+          <i class="pi pi-phone"></i>
 
-          {{citys[$route.params.prop].number}}
+          {{ citys[$route.params.prop].number }}
         </p>
         <p class="m-4">bądź mailowy</p>
         <p class="m-4">
-          <i class="pi pi-envelope" style="font-size: 1rem"></i>
+          <i class="pi pi-envelope"></i>
 
-          {{citys[$route.params.prop].mail}}
+          {{ citys[$route.params.prop].mail }}
         </p>
         <p class="m-2">
           Realizacja vouchera wymaga uprzedniej rezerwacji terminu. Cena
@@ -118,14 +114,20 @@
             <p>Jumanji</p>
             <p class="mb-6">Wioska Smerfów</p>
           </div>
-          <div v-if="$route.params.prop === 'bielsko'" class="w-4 flex flex-column align-items-end">
-            <p class="font-bold">150 PLN</p>
-            <p class="font-bold">150 PLN</p>
+          <div
+            v-if="$route.params.prop === 'bielsko'"
+            class="w-4 flex flex-column align-items-end"
+          >
             <p class="font-bold">150 PLN</p>
             <p class="font-bold">120 PLN</p>
+            <p class="font-bold">150 PLN</p>
+            <p class="font-bold">150 PLN</p>
             <p class="font-bold mb-6">120 PLN</p>
           </div>
-          <div v-if="$route.params.prop === 'wroclaw'" class="w-4 flex flex-column align-items-end">
+          <div
+            v-if="$route.params.prop === 'wroclaw'"
+            class="w-4 flex flex-column align-items-end"
+          >
             <p class="font-bold">250 PLN</p>
             <p class="font-bold">250 PLN</p>
             <p class="font-bold">180 PLN</p>
@@ -140,34 +142,54 @@
             <p>
               <i class="pi pi-envelope mr-2" style="font-size: 1rem"></i>
 
-              {{citys[$route.params.prop].mail}}
+              {{ citys[$route.params.prop].mail }}
             </p>
             <p>
               <i class="pi pi-phone mr-2" style="font-size: 1rem"></i>
 
-              {{citys[$route.params.prop].number}}
+              {{ citys[$route.params.prop].number }}
             </p>
             <p>
               <i class="pi pi-facebook mr-2" style="font-size: 1rem"></i>
-              <a v-if="$route.params.prop === 'wroclaw'" href="http://www.facebook.pl/Wroclawhurryup" target="_blank"
-                class="underline">facebook</a>
-              <a v-if="$route.params.prop === 'bielsko'" href="http://www.facebook.pl/Bielskohurryup" target="_blank"
-                class="underline">facebook</a>
+              <a
+                v-if="$route.params.prop === 'wroclaw'"
+                href="http://www.facebook.pl/Wroclawhurryup"
+                target="_blank"
+                class="underline"
+                >facebook</a
+              >
+              <a
+                v-if="$route.params.prop === 'bielsko'"
+                href="http://www.facebook.pl/Bielskohurryup"
+                target="_blank"
+                class="underline"
+                >facebook</a
+              >
             </p>
           </div>
           <div class="flex flex-column align-items-end">
             <p>
               <i class="pi pi-map-marker" style="font-size: 1rem"></i>
-              {{citys[$route.params.prop].adress}}
+              {{ citys[$route.params.prop].adress }}
             </p>
             <p>
-              <a v-if="$route.params.prop === 'wroclaw'" href="https://goo.gl/maps/pJchJ7hPWkcX2LECA" target="_blank"
-                class="underline">pokaż na mapie</a>
-              <a v-if="$route.params.prop === 'bielsko'" href="https://goo.gl/maps/aqFTVvZGZmeYcGRm7" target="_blank"
-                class="underline">pokaż na mapie</a>
+              <a
+                v-if="$route.params.prop === 'wroclaw'"
+                href="https://goo.gl/maps/pJchJ7hPWkcX2LECA"
+                target="_blank"
+                class="underline"
+                >pokaż na mapie</a
+              >
+              <a
+                v-if="$route.params.prop === 'bielsko'"
+                href="https://goo.gl/maps/aqFTVvZGZmeYcGRm7"
+                target="_blank"
+                class="underline"
+                >pokaż na mapie</a
+              >
             </p>
           </div>
-        </div>  
+        </div>
       </div>
     </section>
   </div>
@@ -207,11 +229,6 @@ const citys = {
   margin: 5vh;
 }
 
-.p-button-rounded {
-  background-color: white !important;
-  color: black !important;
-}
-
 #vouchery {
   background-color: #1a1a1a;
 }
@@ -229,27 +246,45 @@ const citys = {
   background-color: rgb(50, 50, 50);
 }
 
-.infoRezerwation {
-  transition: width 0.5s !important;
-  transition-timing-function: linear !important;
+.p-button.infoRezerwation {
+  transition: width 0.5s;
+  transition-timing-function: linear;
+  width: 20rem;
 }
 
-.infoRezerwation:hover {
-  width: 40% !important;
+.p-button.infoRezerwation:hover {
+  width: 30%;
 }
 
-header {
+header,
+section {
   width: 60%;
 }
 
-@media screen and (max-width: 760px) {
+.infoVouchersContainer > .p-card.p-card.p-component {
+    background-color: rgba(26, 26, 26, 0.64);
+    text-align: center;
+    width: 25rem;
+    height: 17rem;
+    line-height: 1.5;
+  }
 
+  .infoVouchersContainer > .p-card.p-card.p-component p{
+    font-size: 1.3rem;
+  }
+
+@media screen and (max-width: 1200px) {
   header,
   .infoContainer,
-  #vouchery>section,
+  section,
   .voucherPrices,
   .contact {
-    width: 90% !important;
+    width: 90%;
+    margin: 0;
+  }
+
+  .contactContainer div>p{
+    width: 250px;
   }
 
   .infoVouchersContainer {
@@ -258,17 +293,22 @@ header {
 
   #contakt .contactContainer,
   #contakt div div {
-    flex-direction: column !important;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .voucherPrices div>div:first-of-type {
+  .voucherPrices div > div:first-of-type {
     flex-grow: 2;
     padding-left: 30px;
   }
 
-  .voucherPrices div>div {
+  .voucherPrices div > div {
     padding-right: 30px;
+  }
+
+  .infoVouchersContainer > .p-card.p-card.p-component p{
+    font-size: 1rem;
+    margin-top: 1.5rem;
   }
 }
 </style>

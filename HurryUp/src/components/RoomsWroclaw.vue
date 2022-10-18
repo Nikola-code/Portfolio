@@ -50,7 +50,6 @@
     header=""
     v-model:visible="displayModal"
     :breakpoints="{ '960px': '75vw', '640px': '90vw' }"
-    :style="{ width: '50vw', opacity: 0.98 }"
     :modal="true"
     position="top"
     :draggable="false"
@@ -83,8 +82,8 @@
     </template>
     <div>
       <p class="roomDescription mt-6 font-bold text-lg">{{ roomsAray[n].H1 }}</p>
-      <p class="roomDescription text-sm">{{ roomsAray[n].p }}</p>
-      <p class="roomDescription text-sm">{{ roomsAray[n].p2 }}</p>
+      <p class="roomDescription">{{ roomsAray[n].p }}</p>
+      <p class="roomDescription">{{ roomsAray[n].p2 }}</p>
     </div>
     <div class="flex justify-content-between mt-8 mx-auto text-lg">
       <div class="">
@@ -94,7 +93,7 @@
         <p><i class="pi pi-star mr-2"></i>poziom trudności</p>
         <p><i class="pi pi-language mr-2"></i>język gry</p>
         <p><i class="pi pi-money-bill mr-2"></i>cena</p>
-        <p class="mt-6 font-bold text-sm">{{ roomsAray[n].additionalP }}</p>
+        <p class="mt-6 font-bold">{{ roomsAray[n].additionalP }}</p>
       </div>
       <div>
         <p>{{ roomsAray[n].numberOfPlayers }}</p>
@@ -108,7 +107,7 @@
     <template #footer>
       <Button
         label="REZERWACJA"
-        class="p-button-rounded w-12 text-xl button"
+        class="p-button-rounded w-12 text-xl button text-black-alpha-70"
         autofocus
       />
     </template>
@@ -174,118 +173,3 @@ const openModal = () => {
   displayModal.value = true;
 };
 </script>
-
-<style>
-.addamsi,
-.smerfy,
-.jumanji {
-  background-image: url(../assets/img/3RA.jpg) !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  color: white !important;
-  filter: grayscale(50%);
-}
-
-.p-card {
-  width: 25rem;
-  height: 15rem;
-  margin: 1rem;
-}
-
-.p-card:hover .scale {
-  transform: scale(1.1);
-}
-
-.smerfy {
-  background-image: url(../assets/img/1WS.jpg) !important;
-}
-
-.jumanji {
-  background-image: url(../assets/img/1J.jpg) !important;
-}
-
-@media screen and (max-width: 760px) {
-  #Rooms .roomsCardsContainer {
-    flex-direction: column;
-  }
-
-  #Rooms .p-card {
-    width: auto !important;
-    margin-bottom: 1rem;
-    height: 10rem;
-  }
-}
-
-.p-dialog-content,
-.p-dialog-footer {
-  background-color: #1a1a1a !important;
-  color: white !important;
-  padding-right: 5rem !important;
-  padding-left: 5rem !important;
-}
-
-.p-dialog {
-  overflow: hidden;
-  max-height: 97vh;
-}
-
-.p-dialog .p-dialog-header {
-  padding: 0 !important;
-  background-color: transparent !important;
-}
-
-.p-dialog-header-icon {
-  position: absolute !important;
-  right: 20px;
-  color: white !important;
-}
-
-.p-dialog-footer {
-  padding-top: 2rem !important;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
-  background-color: rgb(35, 35, 35) !important;
-}
-
-.roomDescription {
-  font-size: 1.2rem;
-}
-
-.button {
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: 10rem;
-  z-index: -2;
-}
-.button:before {  
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: rgb(200, 200, 200);
-  transition: all 0.3s;
-  border-radius: 10rem;
-  z-index: -1;
-}
-.button:hover:before {
-  width: 100%;
-}
-</style>

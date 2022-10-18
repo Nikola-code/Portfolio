@@ -63,7 +63,6 @@
     header=""
     v-model:visible="displayModal"
     :breakpoints="{ '960px': '75vw', '640px': '90vw' }"
-    :style="{ width: '50vw', opacity: 0.98 }"
     :modal="true"
     position="top"
     :draggable="false"
@@ -106,8 +105,8 @@
       <p class="roomDescription mt-6 font-bold text-lg">
         {{ roomsAray[n].H1 }}
       </p>
-      <p class="roomDescription text-sm">{{ roomsAray[n].p }}</p>
-      <p class="roomDescription text-sm">{{ roomsAray[n].p2 }}</p>
+      <p class="roomDescription">{{ roomsAray[n].p }}</p>
+      <p class="roomDescription">{{ roomsAray[n].p2 }}</p>
     </div>
     <div class="flex justify-content-between mt-8 mx-auto text-lg">
       <div class="">
@@ -117,7 +116,7 @@
         <p><i class="pi pi-star mr-2"></i>poziom trudności</p>
         <p><i class="pi pi-language mr-2"></i>język gry</p>
         <p><i class="pi pi-money-bill mr-2"></i>cena</p>
-        <p class="mt-6 font-bold text-sm">{{ roomsAray[n].additionalP }}</p>
+        <p class="mt-6 font-bold">{{ roomsAray[n].additionalP }}</p>
       </div>
       <div>
         <p>{{ roomsAray[n].numberOfPlayers }}</p>
@@ -131,7 +130,7 @@
     <template #footer>
       <Button
         label="REZERWACJA"
-        class="p-button-rounded w-12 text-xl button"
+        class="p-button-rounded w-12 text-xl button text-black-alpha-70"
         autofocus
       />
     </template>

@@ -1,0 +1,5 @@
+#emojize
+import emoji
+
+text=input("Input: ")
+print("Output: "+emoji.emojize(text))

@@ -1,13 +1,13 @@
-W tym repozytorium znajduą się moje mini portfolio. Zawiera ono prace, które wykonałam w ciągu ostatnich trzech miesięcy. 
+This repository contains my mini portfolio. It consists of the projects I have done over the past three months.
 
-Folder Python zawiera zadania z pierwszych 4 działów ogólnodostępnego, Harwardzkiego kursu "CS50’s Introduction to Programming with Python". Treści zadań znajdją się na stronie https://cs50.harvard.edu/python/2022/. Na pasku po lewej stronie widnieje informacja odnośnie sekcji, które omawiane są na wyżej wymienionym kursie, po kliknięciu w daną sekcję, na samym dole strony znajduje się przekierowanie (Problem set n) do treści zadań.
+The Python folder contains assignments from the first 4 sections of the open-access Harvard course "CS50's Introduction to Programming with Python". The content of the assignments can be found at https://cs50.harvard.edu/python/2022/. The bar on the left shows information regarding the sections that are discussed in the aforementioned course; after clicking on a given section, redirect (Problem set n) to the content of the tasks can be found at the very bottom of the page.
 
-Folder HurryUp zawiera mój własny projekt, który ma zostać wdrożony po napisaniu back-endu. Jest to strona dla wrocławskiego Escape Roomu. Ma ona umożliwić użytkownikowi zapoznanie się z ofertą firmy oraz dokonanie rezerwacji na dany pokój. Niestety rezerwacja jeszcze jest na etapie tworzenia :).
+The HurryUp folder contains my own project, waiting to be implemented after the back-end is written. It is a website for an Escape Room located in Wrocław. Its goal is to allow the users to learn about all of the services that the company is offering and to make a reservation for a particular room. Unfortunately, the reservation is still in the development stage :).
 
-Folder BonaAkademia zawiera projket, który tworzyłam wraz z Team'em członków tegorocznej BonaAkademi w firmie BonaSoft. Jest to system ułatwiający zarządzanie pracownikami w tej właśnie firmie. Zawiera takie funkcjonalności jak: 
-- przydzielanie pracownika do projektu,
-- przydzielanie pracownika do zespołu,
-- ustalenie grafiku
-Niestety zabrakło nam czasu na dopracowanie projketu i zakończyliśmy akademię z bardzo wstępną jego wersją.
+BonaAkademia folder contains a project that I created together with the Team members of this year's BonaAkademia at BonaSoft. It is a system that facilitates the management of employees in this particular company. It includes functionalities such as:
+- assigning an employee to a project,
+- assigning an employee to a team,
+- setting a schedule
+Unfortunately, we ran out of time to refine the project and ended the academy with its preliminary version.
 
-Dziękuję, że zapoznałaś/łeś się z moim mini portfolio. Bardzo mi miło, że zechciałeś/łaś na nie zerknąć :).
+Thank you for taking a look at my mini portfolio. I am very pleased that you cared to have a peek at it :).

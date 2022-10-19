@@ -41,6 +41,7 @@ import { RouterLink } from "vue-router";
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   margin-right: 3rem;
+  box-shadow: rgba(66, 66, 66, 0.73) 0px 26px 30px -10px, rgba(66, 66, 66, 0.73) 0px 16px 10px -10px;
 }
 
 @keyframes gradient {
@@ -68,6 +69,7 @@ p > span:hover {
   background: linear-gradient(-45deg, #444444, #0a0708);
   animation: gradient 15s ease infinite;
   margin-left: 3rem;
+  box-shadow: 8px 15px 47px -9px rgba(66, 68, 90, 1);
 }
 
 .imgContainer1 > p,

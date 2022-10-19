@@ -93,7 +93,7 @@
         <p><i class="pi pi-star mr-2"></i>poziom trudności</p>
         <p><i class="pi pi-language mr-2"></i>język gry</p>
         <p><i class="pi pi-money-bill mr-2"></i>cena</p>
-        <p class="mt-6 font-bold">{{ roomsAray[n].additionalP }}</p>
+        <p class="mt-6">{{ roomsAray[n].additionalP }}</p>
       </div>
       <div>
         <p>{{ roomsAray[n].numberOfPlayers }}</p>
